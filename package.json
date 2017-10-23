@@ -24,7 +24,7 @@
     "mocha": "^4.0.1"
   },
   "engines": {
-    "node": ">=8.6.0"
+    "node": ">=8"
   },
   "eslintConfig": {
     "extends": "@aptoma/eslint-config",
