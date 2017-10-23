@@ -8,6 +8,7 @@
   "description": "Helper library for doing smart crops of images based on area of interest data",
   "main": "lib/index.js",
   "scripts": {
+    "lint": "eslint lib",
     "test": "mocha lib/**/*.test.js",
     "watch": "mocha --watch 'lib/**/*.js' --timeout 500"
   },
