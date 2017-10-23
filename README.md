@@ -3,8 +3,8 @@ Area of Interest Smart Cropper
 
 Create smart crops from area of interest data.
 
-This lib is designed be used for images served by Aptoma's Smooth Storage service, but the crop calculations should be
-applicable in other contexts.
+This lib is designed to be used with images served by Aptoma's Smooth Storage service, but the crop calculations should
+be applicable in other contexts.
 
 By provding image data with area of interest and an optional focus point, you can generate data for different crops that
 you can use to resize images.
@@ -25,20 +25,22 @@ const transformToken = '...';
 
 // The raw data of the image
 const imageData = {
-	url: 'https://...',
-	width: 1200,
-	height: 800,
-	aoi: {
-		x: 200,
-		y: 100,
-		width: 500,
-		height: 300
-	},
-	// Focus point can be omitted, in which case the center of the area of interest will be used instead
-	focusPoint: {
-		x: 400,
-		y: 200
-	}
+    url: 'https://...',
+    width: 1200,
+    height: 800,
+    aoi: {
+        x: 200,
+        y: 100,
+        width: 500,
+        height: 300,
+        // Focus can be omitted, in which case the center of the area of interest will be used instead
+        focus: {
+            x: 400,
+            y: 200
+        },
+        // Origin is not used by the crop function, by you may use this do decide which mode to use
+        origin: 'auto|manual'
+    }
 };
 
 const size = {
@@ -67,12 +69,12 @@ The smart cropper support different modes:
 
 ### FOCUS_POINT
 
-FOUCS_POINT will create a large crop centered around either the provided focusPoint or the center of the area of interest.
+FOUCS_POINT will create a large crop centered around either the provided focus point or the center of the area of interest.
 
 Depending on whether your requested format is wider or narrower than the area of interest, this will include either the
 full width or height of the original image.
 
-This mode will produce the most universally usable crop, as long as the original composition of the image is sensible.
+This mode will produce the most universally usable crop, as long as the original composition of the image is good.
 
 ### TIGHT_AREA_OF_INTEREST
 
@@ -97,7 +99,7 @@ faces are located near an edge, and the requested format is too different from t
 
 SAFE behaves similar to FOCUS_POINT, but after making the initial crop around the focus point, the crop will be moved
 to also include the entire area of interest. If necessary for preserving the entire area of interest, the final height
-may be adjusted to longer conform to ther requested format.
+may be adjusted to no longer conform to ther requested format.
 
 This mode should be used when it's more important that the entire area of interest is included, than getting the exact
 crop format.
@@ -108,7 +110,7 @@ Utility functions
 Smart Crop also provides utility functions to get some data about the crop.
 
 `smartCrop.getCuttableArea(areaOfInterest, crop)` will return an object containing how much more can be cut from each side
-without removeing any of the area of interest. The values can be negative, which indicates that the some parts have been cut.
+without removing any of the area of interest. The values can be negative, which indicates that some parts have been cut.
 
 `smartCrop.getCutArea({width: originalWidth, height: originalHeight}, crop)` will return how much has been cut from each edge of the original image.
 
