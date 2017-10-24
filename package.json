@@ -4,7 +4,7 @@
     "type": "git",
     "url": "git@github.com:aptoma/aoi-smart-crop.git"
   },
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Helper library for doing smart crops of images based on area of interest data",
   "main": "lib/index.js",
   "scripts": {
