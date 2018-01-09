@@ -12,6 +12,10 @@
     "test": "mocha lib/**/*.test.js",
     "watch": "mocha --watch 'lib/**/*.js' --timeout 500"
   },
+  "files": [
+    "README.md",
+    "lib"
+  ],
   "author": "Gunnar Lium <gunnar@aptoma.com>",
   "license": "MIT",
   "dependencies": {
