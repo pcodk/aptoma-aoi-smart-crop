@@ -9,6 +9,10 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint lib",
+    "prerelease": "npm run lint && npm run test",
+    "release": "npm run prerelease && release-it -n -i patch",
+    "release:minor": "npm run prerelease && release-it -n -i minor",
+    "release:major": "npm run prerelease && release-it -n -i major",
     "test": "mocha lib/**/*.test.js",
     "watch": "mocha --watch 'lib/**/*.js' --timeout 500"
   },
@@ -19,13 +23,14 @@
   "author": "Gunnar Lium <gunnar@aptoma.com>",
   "license": "MIT",
   "dependencies": {
-    "qs": "^6.5.1"
+    "qs": "^6.6.0"
   },
   "devDependencies": {
     "@aptoma/eslint-config": "^7.0.1",
-    "chai": "^4.1.2",
-    "eslint": "^4.8.0",
-    "mocha": "^4.0.1"
+    "chai": "^4.2.0",
+    "eslint": "^5.9.0",
+    "mocha": "^5.2.0",
+    "release-it": "^8.2.0"
   },
   "engines": {
     "node": ">=8"
