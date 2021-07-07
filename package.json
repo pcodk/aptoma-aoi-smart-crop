@@ -23,6 +23,7 @@
   "author": "Gunnar Lium <gunnar@aptoma.com>",
   "license": "MIT",
   "dependencies": {
+    "crypto-js": "^4.0.0",
     "qs": "^6.10.1"
   },
   "devDependencies": {
