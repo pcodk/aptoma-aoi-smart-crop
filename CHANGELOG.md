@@ -1,5 +1,9 @@
 ### Changelog
 
+#### [1.0.1](https://github.com/aptoma/aoi-smart-crop/compare/1.0.0...1.0.1) 2022-04-19
+
+- Add auto-changelog formatting [`da0a1f6`](https://github.com/aptoma/aoi-smart-crop/commit/da0a1f6823837a7ad756eecca26adc9e19d50d7d)
+
 ### [1.0.0](https://github.com/aptoma/aoi-smart-crop/compare/0.4.1...1.0.0) 2021-07-08
 
 - Add auto changelog and upgrade deps [`c8dd035`](https://github.com/aptoma/aoi-smart-crop/commit/c8dd0358f040399a193b4fbbad6396e5915cb51b)
